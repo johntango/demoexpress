@@ -1,0 +1,22 @@
+{
+  "name": "demoexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gitPull.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johntango/demoexpress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johntango/demoexpress/issues"
+  },
+  "homepage": "https://github.com/johntango/demoexpress#readme",
+  "dependencies": {
+    "child_process": "^1.0.2"
+  }
+}
