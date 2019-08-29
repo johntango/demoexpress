@@ -5,15 +5,11 @@ app.get('/', function(req, res) {
     res.send('<h1> Hello World </h1>');
 });
 
-app.get('/lucky', function(req, res) {
-    var num = Math.floor(Math.random() * 10);
-    res.send('My lucky number =  ' + num);
-});
-
-app.get('/input/:quote/:author', function(req,res){
+app.get('/input/:name/:email', function(req,res){
+	console.log(req.params.name +", "+req.params.email)
     res.send ({
-        quote : req.params.quote,
-        author : req.params.author   
+        name : req.params.name,
+        email : req.params.email   
     });
 });
 
