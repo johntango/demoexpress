@@ -10,10 +10,10 @@
 - server5 - Uses public directory for "static" web page called index1.html and "fetch" to move data back to web server route /input which then stores names and redirects back to / route.
 - server6 - Uses index2.html to render "dark mode" using bootstrap css.
 
-Debugging Web Page + Web server needs careful attention. Which one is causing the error?
-Web Page can be debugged using Chrome IDE
-Web Server can be run in debug mode with breakpoints.
-Note: Web page may used "cached" version so may not reflect updates. Do hard refresh (look this up)
+* Debugging Web Page + Web server needs careful attention. Which one is causing the error?
+* Web Page can be debugged using Chrome IDE
+* Web Server can be run in debug mode with breakpoints.
+* Note: Web page may used "cached" version so may not reflect updates. Do hard refresh (look this up)
 
 Note that README.md is using markdown.
 To run code
