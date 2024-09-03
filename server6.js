@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const escape = require('escape-html');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Array to store names and emails
 let users = [];
@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 // Serve the web page with the form
 app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/public/index1.html');
+    res.sendFile(__dirname + '/public/index2.html');
 });
 
 // Handle the form submission via fetch
@@ -30,6 +30,5 @@ app.post('/input', function(req, res){
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+    console.log(`Server 6 running at http://localhost:${port}/`);
 });
-// This code is similar to the previous example, but it uses the fetch API to submit the form data asynchronously.

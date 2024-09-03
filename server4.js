@@ -6,10 +6,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const port = 3000;
 
+// Array to store names and emails
+let users = [];
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve the form on the root route
+// Serve the web page with the form
 app.get('/', function(req, res) {
+    let userList = users.map(user => `<li>${user.name} (${user.email})</li>`).join('');
+    
     res.send(`
         <!DOCTYPE html>
         <html lang="en">
@@ -29,21 +34,25 @@ app.get('/', function(req, res) {
                 <br><br>
                 <button type="submit">Submit</button>
             </form>
+            <h2>Submitted Users:</h2>
+            <ul>${userList}</ul>
         </body>
         </html>
     `);
 });
 
-// Handle the form submission on the /input route
+// Handle the form submission
 app.post('/input', function(req, res){
-    const { name, email } = req.body;
-    console.log(name + ", " + email);
-    res.send({
-        name: name,
-        email: email
-    });
+    const name = escape(req.body.name);
+    const email = escape(req.body.email);
+
+    // Add the new user to the array
+    users.push({ name: name, email: email });
+
+    // Redirect back to the home page
+    res.redirect('/');
 });
 
 // Start the server
 app.listen(3000);
-console.log("Running on port 3000");
+console.log("Running on port 3000");    

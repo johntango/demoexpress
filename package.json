@@ -19,6 +19,7 @@
   "homepage": "https://github.com/johntango/demoexpress#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "escape-html": "^1.0.3",
     "express": "^4.16.4"
   }
 }

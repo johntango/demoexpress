@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark"></html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Submit Your Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    
+  </head>
+  <body class="bg-dark text-light">
+    <div class="container mt-5">
+        <h1 class="text-center">XXX Name and Email</h1>
+        <form id="dataForm" class="bg-dark text-light">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" class="form-control bg-dark text-light" required>
+            </div>
+            <div class="bg-dark text-light">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control bg-dark text-light" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <h2 class="bg-dark text-light">Submitted Users:</h2>
+        <ul id="userList" class="list-group bg-dark text-light">
+            <!-- User list will be populated here -->
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            // Send data using fetch
+            fetch('/input', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: name, email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Clear the current list
+                const userList = document.getElementById('userList');
+                userList.innerHTML = '';
+
+                // Populate the list with updated users
+                data.forEach(user => {
+                    const li = document.createElement('li');
+                    li.textContent = `${user.name} (${user.email})`;
+                    li.className = 'list-group-item bg-dark text-light';
+                    userList.appendChild(li);
+                });
+
+                // Clear the form inputs
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
