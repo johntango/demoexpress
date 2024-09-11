@@ -1,3 +1,5 @@
+// Here we stored the names and emails in an array and displayed them on the web page.
+// This is a typical use case for a web server, where we store data in a datastore on WS and display it to the user.
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();

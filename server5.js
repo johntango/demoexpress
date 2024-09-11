@@ -1,3 +1,4 @@
+// Here we store the web page un public directory and serve it using express.static.
 const express = require('express');
 const bodyParser = require('body-parser');
 const escape = require('escape-html');
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Serve the web page with the form
+// note __dirname is the directory in which node Web Server is running 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/public/index1.html');
 });

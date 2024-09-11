@@ -1,3 +1,5 @@
+// route /lucky will return a random number between 0 and 9
+// route / will return Hello World
 var express = require('express');
 
 var app = express();

@@ -1,3 +1,6 @@
+// Purpose: A simple server that listens on port 3000 and returns a simple message
+// routes f1 and f2 return different colors
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
