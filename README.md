@@ -6,8 +6,8 @@
 - server1 - get a lucky number on route /lucky
 - server2 - /input/:name/:email data moved to server in URL
 - server3 - shows routes f1, f2, input etc
-- server4 - Form action="/input" method="POST" to move data to server then back again using literal tick mark to inject data dynamically into Web Page on the server and send new updated web page back
-- server5 - Uses public directory for "static" web page called index1.html and "fetch" to get data from the Web Server route /input and move data back 
+- server4 - Form action="/input" method="POST" to move data to a specific ROUTE on the server then back again using literal tick mark to inject data dynamically into Web Page on the server and send new updated web page back
+- server5 - Uses public directory for "static" web page called index1.html and "fetch" sends the data to the Web Server using POST and body. The response from the Web Server is a list of all the names and emails, which are injected into the "Static Web Page".  This is very efficient because the Web Page does not need to be "refreshed".
 - server6 - Uses index2.html to render "dark mode" using bootstrap css.
 
 * Debugging Web Page + Web server needs careful attention. Which one is causing the error?
