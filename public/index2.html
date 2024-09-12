@@ -54,7 +54,7 @@
                 const userList = document.getElementById('userList');
                 userList.innerHTML = '';
 
-                // Populate the list with updated users
+                // Loop over data and Populate the list with updated users
                 data.forEach(user => {
                     const li = document.createElement('li');
                     li.textContent = `${user.name} (${user.email})`;
